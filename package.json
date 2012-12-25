@@ -1,6 +1,6 @@
 {
   "name": "messente",
-  "version": "0.0.1",
+  "version": "0.1.2",
   "description": "Node.js client library for Messente group messaging platform",
   "main": "lib/client.js",
   "directories": {
@@ -22,8 +22,8 @@
   "author": "Harri Siirak <harri.siirak@gmail.com>",
   "license": "MIT",
   "readmeFilename": "README.md",
-  "gitHead": "118b73d47ddccab1eb88209f99be5f816d9a3f1b",
   "dependencies": {
+    "when": "~1.7.1",
     "request": "~2.12.0"
   },
   "devDependencies": {
