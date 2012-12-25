@@ -4,13 +4,14 @@ var messente = require('../lib/client');
 
 // Globals
 var client = null;
+var ids = null;
 
 test('create a new client', function(t) {
-  messente.createClient(config, function(err, cli) {
+  messente.createClient(config, function(err, _client) {
     t.ifError(err, 'Messente client creation error');
-    t.ok(cli, 'Messente client created');
+    t.ok(_client, 'Messente client created');
 
-    client = cli;
+    client = _client;
     t.end();
   });
 });
@@ -21,7 +22,14 @@ test('sending a message', function(t) {
     text: 'Hello!'
   };
 
-  client.sendMessage(opts, function(err, result) {
+  client.sendMessage(opts, function(err, result, _ids) {
+    ids = _ids;
+    t.end();
+  });
+});
+
+test('get repots', function(t) {
+  client.getReport(ids, function(err, result) {
     console.log(arguments);
     t.end();
   });
