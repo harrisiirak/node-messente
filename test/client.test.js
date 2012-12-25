@@ -26,3 +26,10 @@ test('sending a message', function(t) {
     t.end();
   });
 });
+
+test('get account balance', function(t) {
+  client.getAccountBalance(function(err, result) {
+    console.log(arguments);
+    t.end();
+  });
+});
