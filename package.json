@@ -1,0 +1,36 @@
+{
+  "name": "messente",
+  "version": "0.0.1",
+  "description": "Node.js client library for Messente group messaging platform",
+  "main": "lib/client.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "./node_modules/.bin/tap ./test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/harrisiirak/node-messente.git"
+  },
+  "keywords": [
+    "messente",
+    "sms",
+    "messaging",
+    "mobile"
+  ],
+  "author": "Harri Siirak <harri.siirak@gmail.com>",
+  "license": "MIT",
+  "readmeFilename": "README.md",
+  "gitHead": "118b73d47ddccab1eb88209f99be5f816d9a3f1b",
+  "dependencies": {
+    "request": "~2.12.0"
+  },
+  "devDependencies": {
+    "tap": "~0.3.0",
+    "easy-config": "~0.1.1"
+  },
+  "engines": {
+    "node": ">=0.8"
+  }
+}
