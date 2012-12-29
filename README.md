@@ -34,7 +34,7 @@ messente.createClient(opts, function(err, client) {
 
   // Compose message
   var message = {
-    to: [ '+372500000000' ], // You can specify here multiple recipients
+    to: [ '+372500000000' ], // You can specify multiple recipients here
     text: 'Hello!'
   };
 
