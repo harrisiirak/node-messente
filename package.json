@@ -23,8 +23,7 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "when": "~1.7.1",
-    "request": "~2.12.0"
+    "when": "~2.8.0"
   },
   "devDependencies": {
     "tap": "~0.3.0",
