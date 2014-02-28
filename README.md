@@ -13,8 +13,7 @@ npm install messente
 Usage
 ========
 
-Although Messente API v2 doesn't seem to support multiple recipients per message anymore, there is a workaround. The message
-will be sent for every recipient separately.
+Although Messente API v2 doesn't seem to support multiple recipients per message anymore, there is a workaround. The message will be sent for every recipient separately.
 
 ```javascript
 var messente = require('messente');
@@ -80,7 +79,7 @@ client.getReport([ 'b3258850cef53cd8b904a8185d6375c9f7d96369' ], function(err, r
 });
 ```
 
-Additionally Messente account balance call is also supported.
+Account balance call.
 
 ```javascript
 client.getAccountBalance(function(err, result) {
@@ -92,4 +91,10 @@ client.getAccountBalance(function(err, result) {
   console.log('Result: ');
   console.log(result);
 });
+```
+
+Running tests
+========
+```bash 
+MSNTE_USER=<api user> MSNTE_PWD=<api password> MSNTE_SECURE=true MSNTE_NUMBERS="<comma separated list of numbers>" npm test
 ```
