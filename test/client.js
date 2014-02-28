@@ -54,4 +54,22 @@ describe('Messente API client', function () {
       done();
     });
   });
+
+  it('should get pricelist list for country', function (done) {
+    client.getPricesForCountry('EE', function onFinish (err, prices) {
+      demand(err).be.null();
+      demand(prices).be.object();
+
+      done();
+    });
+  });
+
+  it('should get all prices', function (done) {
+    client.getPrices(function onFinish (err, prices) {
+      demand(err).be.null();
+      demand(prices).be.object();
+
+      done();
+    });
+  });
 });
