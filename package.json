@@ -7,7 +7,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "./node_modules/.bin/tap ./test/*.js"
+    "test": "./node_modules/.bin/mocha --reporter spec test/"
   },
   "repository": {
     "type": "git",
@@ -26,8 +26,8 @@
     "when": "~2.8.0"
   },
   "devDependencies": {
-    "tap": "~0.3.0",
-    "easy-config": "~0.1.1"
+    "must": "~0.11.0",
+    "mocha": "~1.17.1"
   },
   "engines": {
     "node": ">=0.8"
