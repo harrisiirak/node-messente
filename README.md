@@ -1,6 +1,6 @@
 messente
 ========
-[![NPM version](https://badge.fury.io/js/cron-parser.png)](http://badge.fury.io/js/messente)
+[![NPM version](https://badge.fury.io/js/messente.png)](http://badge.fury.io/js/messente)
 
 Node.js client library (unofficial) for Messente (https://messente.com) group messaging platform, based on Messente API v2.
 For more information and how to use and setup Messente API, read Messente API [documentation](https://messente.com/pages/api).
