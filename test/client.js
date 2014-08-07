@@ -14,18 +14,16 @@ describe('Messente API client', function () {
     password: process.env.MSNTE_PWD || null
   };
 
-  it('should create a new client', function (done) {
-    messente.createClient(opts, function(err, _client) {
+  it('should create a new client', function () {
+    try {
+      client = messente.createClient(opts);
+    } catch (err) {
       demand(err).be.null();
-      demand(_client).be.object();
-
-      client = _client;
-      done();
-    });
+    }
   });
 
   it('should send a message', function (done) {
-    client.sendMessage({ text: 'Hello!', to: numbers }, function onFinish (err, result, _ids) {
+    client.sendMessage({ text: 'Hello!', to: numbers, from: process.env.MSNTE_FROM || '' }, function onFinish (err, result, _ids) {
       demand(err).be.null();
       demand(result).be.object();
       demand(_ids).be.array();
@@ -48,6 +46,7 @@ describe('Messente API client', function () {
 
   it('should get account balance', function (done) {
     client.getAccountBalance(function onFinish (err, balance) {
+      console.log(arguments);
       demand(err).be.null();
       demand(balance).be.number();
 

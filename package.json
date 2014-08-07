@@ -1,6 +1,6 @@
 {
   "name": "messente",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Node.js client library for Messente group messaging platform",
   "main": "lib/client.js",
   "directories": {
@@ -23,8 +23,8 @@
   "license": "MIT",
   "readmeFilename": "README.md",
   "dependencies": {
-    "when": "~2.8.0",
-    "csv": "~0.3.7"
+    "csv": "^0.4.0",
+    "when": "^3.4.3"
   },
   "devDependencies": {
     "must": "~0.11.0",

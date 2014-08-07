@@ -14,7 +14,8 @@ npm install messente
 Usage
 ========
 
-Although Messente API v2 doesn't seem to support multiple recipients per message anymore, there is a workaround. The message will be sent for every recipient separately.
+Although Messente API v2 doesn't seem to support multiple recipients per message anymore, but there is a workaround. The message
+will be sent for every recipient separately.
 
 ```javascript
 var messente = require('messente');
@@ -26,37 +27,32 @@ var opts = {
   secure: true
 };
 
-messente.createClient(opts, function(err, client) {
+var client = messente.createClient(opts);
+
+// Compose message
+var message = {
+  to: [ '+372500000000' ], // You can specify multiple recipients here
+  text: 'Hello!'
+};
+
+client.sendMessage(message, function(err, result, ids) {
+  /**
+   * result: [ { error: null,
+   *             code: 'b3258850cef53cd8b904a8185d6375c9f7d96369',
+   *             phone: '+372500000000' } ]
+   *
+   *
+   *  ids: [ 'b3258850cef53cd8b904a8185d6375c9f7d96369' ]
+   *
+   */
+
   if (err) {
     console.log('Error: ' + err.message);
     return;
   }
 
-  // Compose message
-  var message = {
-    to: [ '+372500000000' ], // You can specify multiple recipients here
-    text: 'Hello!'
-  };
-
-  client.sendMessage(message, function(err, result, ids) {
-    /**
-     * result: [ { error: null,
-     *             code: 'b3258850cef53cd8b904a8185d6375c9f7d96369',
-     *             phone: '+372500000000' } ]
-     *
-     *
-     *  ids: [ 'b3258850cef53cd8b904a8185d6375c9f7d96369' ]
-     *
-     */
-
-    if (err) {
-      console.log('Error: ' + err.message);
-      return;
-    }
-
-    console.log('Result: ');
-    console.log(result);
-  });
+  console.log('Result: ');
+  console.log(result);
 });
 ```
 
